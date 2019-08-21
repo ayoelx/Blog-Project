@@ -17,14 +17,34 @@ let homeContent = "Sed ut perspiciatis unde omnis iste natus error sit voluptate
 let aboutContent = "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.";
 let contactContent = "Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.";
 let port = 4000;
+let options = {};
 
 
 app.get('/', (req, res) => {
-  let options = {
+  options = {
     homeContent: homeContent,
-    pageTitle: "Home | Tenner"
+    pageTitle: "Home | Tenner",
+    titleContent: "Home"
   };
   res.render('home', options);
+});
+
+app.get('/about', (req, res) => {
+  options = {
+    homeContent: aboutContent,
+    pageTitle: "About Us | Tenner",
+    titleContent: "About Us"
+  }
+  res.render('about', options)
+});
+
+app.get('/contact', (req, res) => {
+  options = {
+    homeContent: contactContent,
+    pageTitle: "Contact Us | Tenner",
+    titleContent: "Contact Us"
+  }
+  res.render('contact', options)
 });
 
 app.listen(port, () => console.log("Server listening on port " + port));

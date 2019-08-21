@@ -1,27 +1,5 @@
-
-/* #fixed-nav {
-  margin: botto
-} */
-
-h1 {
-  margin-top: 80px;
-}
-
-.navbar-brand {
-  margin-right: 50px;
-  margin-left: 250px;
-}
-
-.nav-link {
-  margin-right: 50px;
-}
-
-.search {
-  display: none;
-}
-
-.appear {
-  display: inline-block;
+.first-title {
+  margin-top: 70px;
 }
 
 .dropdown-item:hover {
