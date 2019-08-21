@@ -22,7 +22,6 @@ let port = 4000;
 app.get('/', (req, res) => {
   let options = {
     homeContent: homeContent,
-    active: "active",
     pageTitle: "Home | Tenner"
   };
   res.render('home', options);
