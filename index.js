@@ -44,7 +44,7 @@ app.get('/contact', (req, res) => {
     pageTitle: "Contact Us | Tenner",
     titleContent: "Contact Us"
   }
-  res.render('contact', options)
+  res.render('contact', options);
 });
 
 app.listen(port, () => console.log("Server listening on port " + port));
