@@ -6,3 +6,24 @@
   background-color: #2631ff;
   color: white;
 }
+
+hr {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.blog-header-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+}
+
+.text-muted {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: lighter;
+}
+
+.card-img {
+  padding: 20px;
+  padding-top: 30px;
+  background-color: #343a40;
+}
