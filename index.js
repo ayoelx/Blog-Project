@@ -23,19 +23,10 @@ let options = {};
 app.get('/', (req, res) => {
   options = {
     homeContent: homeContent,
-    pageTitle: "Home | Tenner",
-    titleContent: "Home"
+    pageTitle: "Tenner | Home",
+    titleContent: ""
   };
   res.render('home', options);
-});
-
-app.get('/about', (req, res) => {
-  options = {
-    homeContent: aboutContent,
-    pageTitle: "About Us | Tenner",
-    titleContent: "About Us"
-  }
-  res.render('about', options)
 });
 
 app.get('/contact', (req, res) => {

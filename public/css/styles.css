@@ -2,6 +2,21 @@
   margin-top: 70px;
 }
 
+.bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
 .dropdown-item:hover {
   background-color: #2631ff;
   color: white;
@@ -12,18 +27,49 @@ hr {
   margin-bottom: 0;
 }
 
+.fab-div a {
+  color: black;
+}
+
+.jumbotron {
+  background-image: url('../images/business_large.jpg');
+  background-size: cover;
+}
+
 .blog-header-logo {
   font-family: 'Playfair Display', serif;
   font-size: 40px;
 }
 
 .text-muted {
-  font-family: 'Montserrat Alternates', sans-serif;
   font-weight: lighter;
 }
 
+.pl {
+  margin: auto;
+}
+
+.fab-div {
+  text-align: right;
+  display: inline;
+}
+
+.footer-title {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.fab-footer {
+  font-size: 1.5rem;
+}
+
 .card-img {
-  padding: 20px;
-  padding-top: 30px;
-  background-color: #343a40;
+  background-image: url('../images/accessories_for_mac_tile.jpg');
+  background-size: cover;
+}
+
+@media (max-width: 500px) {
+  #header-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
 }
