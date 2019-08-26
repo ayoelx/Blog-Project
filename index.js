@@ -43,9 +43,9 @@ app.post('/compose', (req, res) => {
   let title = req.body.title;
   let content = req.body.content;
   let category = req.body.category;
-
+  let summary = req.body.summary;
   options = {
-    month: 'long',
+    month: 'short',
     day: 'numeric'
   }
 
@@ -56,6 +56,7 @@ app.post('/compose', (req, res) => {
     title: title,
     content: content,
     category: category,
+    summary: summary,
     date: now
   };
 
