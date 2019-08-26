@@ -44,13 +44,13 @@ app.post('/compose', (req, res) => {
   let content = req.body.content;
   let category = req.body.category;
 
-  let day = new Date();
-  let now = day.toLocaleDateString('en-US', options);
-
   options = {
     month: 'long',
     day: 'numeric'
   }
+
+  let day = new Date();
+  let now = day.toLocaleDateString('en-US', options);
 
   let post = {
     title: title,
