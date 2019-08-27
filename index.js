@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 
 
 //Pre-defined content
-let homeContent = "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.";
+let homeContent = "Get Started. Post your content and view replies and suggestions. Watch your friends comment on your latest blogs and create your own conversation on Tenner Blog.";
 let contactContent = "Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.";
 let port = 4000;
 let options = {};
@@ -24,10 +24,30 @@ app.get('/', (req, res) => {
   options = {
     homeContent: homeContent,
     pageTitle: "Tenner | Home",
-    titleContent: "Title of a longer featured blog post",
+    titleContent: "Get the best content on Tenner",
+    // Title of a longer featured blog post
     posts: posts
   };
   res.render('home', options);
+});
+
+app.get('/posts/:topic', (req, res) => {
+  let requestedTopic = req.params.topic;
+
+  posts.forEach((post) => {
+    let requiredTitle = post.title;
+    if (_.kebabCase(requestedTopic) == _.kebabCase(requiredTitle)) {
+      options = {
+        pageTitle: "Posts | Tenner",
+        topic: requestedTopic,
+        content: post.content
+      }
+      res.render('post', options);
+    } else {
+      console.log('Error: Could not render post. Requested Topic: ' + post.title + " Required Topic: " + requiredTitle);
+      res.redirect('/');
+    }
+  });
 });
 
 app.get('/compose', (req, res) => {
