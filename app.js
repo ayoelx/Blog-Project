@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 
 
 //Pre-defined content
-let homeContent = "Get Started. Post your content and view replies and suggestions. Watch your friends comment on your latest blogs and create your own conversation on Tenner Blog.";
+let homeContent = "Get Started on Tenner and see your friends comment on your latest blogs. Start your own conversation on Tenner.";
 let contactContent = "Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.";
 let port = 4000;
 let options = {};
@@ -83,6 +83,13 @@ app.post('/compose', (req, res) => {
   posts.push(post);
 
   res.redirect('/');
+});
+
+app.get('/category/:cat', (req, res) => {
+  options = {
+    pageTitle : "Tenner | " + req.params.cat
+  }
+  res.render('category', options);
 });
 
 
